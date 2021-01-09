@@ -27,16 +27,26 @@ class PhoneNumberTest {
 		assertEquals("CALL-2-CALL",phoneNumber.generateString());
 		
 		phoneNumber = new PhoneNumber("2255222558", dictionary);
-		assertEquals("",phoneNumber.generateString());
+		assertEquals("CALL-2-CALL-8",phoneNumber.generateString());
 		
 		phoneNumber = new PhoneNumber("2255222255", dictionary);
 		assertEquals("",phoneNumber.generateString());
 		
 	}
-	
+	@Test
+	void test13() {
+		Dictionary dictionary = new Dictionary();
+		dictionary.add("CALL");
+		dictionary.add("BAL");
+		dictionary.add("ME");
+		PhoneNumber phoneNumber = new PhoneNumber("2255", dictionary);
+		assertEquals("BAL-5",phoneNumber.generateString());
+		
+	}
 	@Test
 	void test3() {
 		Dictionary dictionary = new Dictionary();
+		
 		dictionary.add("CALL");
 		dictionary.add("ME");
 		PhoneNumber phoneNumber = new PhoneNumber("88", dictionary);
@@ -45,12 +55,27 @@ class PhoneNumberTest {
 		phoneNumber = new PhoneNumber("2255863", dictionary);
 		assertEquals("CALL-8-ME",phoneNumber.generateString());
 		
-//		phoneNumber = new PhoneNumber("22558638", dictionary); // Unhandled
-//		assertEquals("CALL-8-ME-8",phoneNumber.generateString());
+		phoneNumber = new PhoneNumber("22558638", dictionary); // Unhandled
+		assertEquals("CALL-8-ME-8",phoneNumber.generateString());
 		
 		
 	}
 	
+	@Test
+	void test5() {
+		Dictionary dictionary = new Dictionary();
+		
+		dictionary.add("BAL");
+		dictionary.add("ME");
+		PhoneNumber phoneNumber = new PhoneNumber("2255", dictionary);
+		assertEquals("BAL-5",phoneNumber.generateString());
+		
+		phoneNumber = new PhoneNumber("2258", dictionary);
+		assertEquals("BAL-8",phoneNumber.generateString());
+		
+		phoneNumber = new PhoneNumber("22522", dictionary);
+		assertEquals("",phoneNumber.generateString());
+	}
 	
 	@Test
 	void test2() {

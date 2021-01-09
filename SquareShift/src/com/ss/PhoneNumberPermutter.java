@@ -3,6 +3,14 @@ package com.ss;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This is a permutter class
+ * It generates various possible permutations possible for a phone number substring<br/>
+ * eg: 23 will return AD,AE,AF,BD,BE,BF,CD,CE,CF<br/>
+ * Strings are generated in natural order so that binary search in dictionary is effective.
+ * @author Philip
+ *
+ */
 public class PhoneNumberPermutter {
 
 	private PhoneNumberPermutter varPhoneNumberPermutter;
